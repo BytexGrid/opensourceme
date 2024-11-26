@@ -1,109 +1,101 @@
 /* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background: #f4f6f8;
     color: #333;
-    line-height: 1.6;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #007bff;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #007bff;
     color: #fff;
 }
 
-header h1 {
-    margin: 0;
+header nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: #007bff;
+    color: #fff;
+}
+
+.hero h1 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-header p {
-    font-size: 1.1rem;
+.hero input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
 }
 
-/* Main Content */
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 20px 40px;
 }
 
 main h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-/* Categories */
-.categories {
-    list-style: none;
-    padding: 0;
+.grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.categories li {
+.card {
     background: #fff;
+    padding: 20px;
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
-.categories a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+.card:hover {
+    transform: scale(1.05);
 }
 
-.categories a:hover {
-    text-decoration: underline;
+.about {
+    background: #f1f1f1;
+    padding: 30px 40px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* Software List */
-.software-list {
-    list-style: none;
-    padding: 0;
-}
-
-.software-list li {
-    margin-bottom: 10px;
-}
-
-.software-list a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.software-list a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #f1f1f1;
+    padding: 20px;
+    background: #333;
+    color: #fff;
     margin-top: 20px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Back Link */
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.back-link:hover {
-    text-decoration: underline;
 }

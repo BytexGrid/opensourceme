@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.querySelector("#search");
-    const categories = document.querySelectorAll(".categories li");
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
 
     searchInput.addEventListener("input", function () {
         const query = searchInput.value.toLowerCase();
-        categories.forEach((category) => {
-            const text = category.textContent.toLowerCase();
-            category.style.display = text.includes(query) ? "block" : "none";
+        cards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(query) ? "block" : "none";
         });
     });
 });

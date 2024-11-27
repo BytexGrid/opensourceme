@@ -76,7 +76,7 @@ h2 {
 .card {
     background: linear-gradient(145deg, #3A5BA0, #4E9DC8); /* Original Blue Gradient for Cards */
     color: white;
-    padding: 25px;
+    padding: 20px;
     text-decoration: none;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Softer shadow for a more refined look */
@@ -89,12 +89,7 @@ h2 {
     height: 100%;
 }
 
-.card:hover {
-    background: linear-gradient(145deg, #4E9DC8, #3A5BA0); /* Lighter blue gradient on hover */
-    transform: scale(1.05);
-}
-
-/* Card Title Styling */
+/* Reduced Gap Between Card Heading and Description */
 .card h3 {
     color: #fff;
     font-size: 1.7rem;
@@ -103,11 +98,17 @@ h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Card Description Styling */
 .card p {
     font-size: 1rem;
     color: #E3F2FD; /* Light blue text for description */
     margin-top: 10px;
+}
+
+/* Add Icon Between Heading and Description */
+.card .card-icon {
+    font-size: 2rem; /* Icon size */
+    margin: 10px 0;
+    color: #fff; /* Icon color */
 }
 
 /* Add Margin to Category Titles */

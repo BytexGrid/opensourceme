@@ -17,7 +17,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for readability */
     z-index: -1; /* Ensure it stays behind text */
 }
 
@@ -25,7 +25,7 @@ body::before {
 main.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
     position: relative;
 }
@@ -35,8 +35,9 @@ h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #f39c12; /* Bright gold color for the heading */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #e74c3c; /* Red for bold impact */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase; /* More professional look */
 }
 
 /* Category grid styling */
@@ -49,20 +50,20 @@ h2 {
 
 /* Individual category cards */
 .card {
-    background: rgba(0, 0, 0, 0.7); /* Darker background for card */
+    background: rgba(33, 33, 33, 0.85); /* Darker background for card */
     color: white;
     padding: 25px;
     text-decoration: none;
     border-radius: 12px;
     transition: transform 0.3s, background 0.3s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     width: 270px;
     text-align: left;
 }
 
 /* Hover effect for cards */
 .card:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(52, 152, 219, 0.4); /* Blue hover effect */
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
@@ -70,10 +71,11 @@ h2 {
 /* Card title */
 .card h3 {
     margin-top: 0;
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: #3498db; /* Blue color for titles */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-transform: capitalize; /* Make the text feel more personal */
 }
 
 /* Card description */
@@ -99,10 +101,19 @@ footer p {
     margin: 0;
 }
 
+/* Section headings (Improve readability and design) */
+h3, h4 {
+    color: #f39c12; /* Gold for subheadings */
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* Adjustments for better responsiveness */
 @media (max-width: 768px) {
     h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     .grid {
         grid-template-columns: 1fr 1fr;
@@ -111,7 +122,7 @@ footer p {
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     .grid {
         grid-template-columns: 1fr;

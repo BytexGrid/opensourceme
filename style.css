@@ -1,0 +1,95 @@
+/* General Body Styles */
+body {
+    background-color: #f8fafc; /* Light and neutral for a modern look */
+    color: #333; /* Dark gray for better readability */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #1e293b; /* Deep blue-gray for sophistication */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navigation Styles */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8; /* Light blue for hover effect */
+}
+
+/* Main Content Styles */
+main {
+    background-color: #ffffff; /* Clean white for content readability */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Modern shadow effect */
+}
+
+/* Button Styles */
+button {
+    background-color: #2563eb; /* Vibrant blue */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8; /* Darker blue for hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e293b; /* Matching header */
+    color: #f1f5f9; /* Soft white for contrast */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* Link Styles */
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1d4ed8; /* Consistent hover color */
+}
+
+/* Utility Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    header, footer {
+        padding: 10px;
+    }
+}

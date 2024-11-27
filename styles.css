@@ -1,95 +1,120 @@
-/* General Body Styles */
-body {
-    background-color: #f8fafc; /* Light and neutral for a modern look */
-    color: #333; /* Dark gray for better readability */
-    font-family: 'Arial', sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9; /* Light gray background for a soft look */
+    color: #333; /* Dark text color for readability */
     line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
 
-/* Header Styles */
-header {
-    background-color: #1e293b; /* Deep blue-gray for sophistication */
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Navigation Styles */
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #38bdf8; /* Light blue for hover effect */
-}
-
-/* Main Content Styles */
-main {
-    background-color: #ffffff; /* Clean white for content readability */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Modern shadow effect */
-}
-
-/* Button Styles */
-button {
-    background-color: #2563eb; /* Vibrant blue */
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #1d4ed8; /* Darker blue for hover */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #1e293b; /* Matching header */
-    color: #f1f5f9; /* Soft white for contrast */
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-}
-
-/* Link Styles */
-a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #1d4ed8; /* Consistent hover color */
-}
-
-/* Utility Styles */
-.container {
-    width: 90%;
+/* Main container for content */
+main.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-        margin: 10px;
-    }
+/* Header Styling */
+h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #2c3e50; /* Dark, elegant color */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    header, footer {
-        padding: 10px;
+/* Category grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid */
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Individual category cards */
+.card {
+    background-color: #ffffff; /* Clean white card */
+    color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    width: 280px;
+    text-align: left;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card title */
+.card h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #3498db; /* Beautiful blue for titles */
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+/* Card description */
+.card p {
+    font-size: 1rem;
+    color: #7f8c8d; /* Light gray text for descriptions */
+    line-height: 1.5;
+}
+
+/* Footer Styling */
+footer {
+    padding: 50px 0;
+    background-color: #2c3e50; /* Elegant dark footer */
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Section headings (Subheadings for different categories) */
+h3, h4 {
+    color: #e74c3c; /* Elegant red for important headings */
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .grid {
+        grid-template-columns: 1fr; /* One column for mobile */
     }
 }

@@ -8,7 +8,7 @@
 /* Body Styling with Elegant Gradient */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #007BFF, #00B0FF); /* Professional Gradient */
+    background: linear-gradient(135deg, #007BFF, #00B0FF); /* Original Professional Gradient */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ h2 {
     max-width: 400px;
     margin-bottom: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center-align the search bar */
 }
 
 #searchInput {
@@ -74,7 +74,7 @@ h2 {
 
 /* Individual Category Cards with Professional Style */
 .card {
-    background: linear-gradient(145deg, #4CAF50, #2E8B57); /* Smooth gradient */
+    background: linear-gradient(145deg, #3A5BA0, #4E9DC8); /* Original Blue Gradient for Cards */
     color: white;
     padding: 25px;
     text-decoration: none;
@@ -90,7 +90,7 @@ h2 {
 }
 
 .card:hover {
-    background: linear-gradient(145deg, #66BB6A, #388E3C); /* Lighter gradient on hover */
+    background: linear-gradient(145deg, #4E9DC8, #3A5BA0); /* Lighter blue gradient on hover */
     transform: scale(1.05);
 }
 

@@ -11,9 +11,14 @@
 <body>
 
     <main class="container">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search categories..." onkeyup="searchFunction()" />
+        </div>
+
         <h2>Explore Open Source Software</h2>
 
-        <div class="grid">
+        <div class="grid" id="categoriesGrid">
             <!-- Category 1: File Management -->
             <a href="software/file-software.html" class="card">
                 <h3>File Management</h3>
@@ -80,6 +85,7 @@
         </footer>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

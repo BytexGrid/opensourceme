@@ -1,7 +1,7 @@
-/* General Body Styling */
+/* General Body Styling with Gradient Background */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
+    background: linear-gradient(135deg, #0099FF, #66CCFF);
     margin: 0;
     padding: 0;
     color: #333;
@@ -15,16 +15,16 @@ main.container {
     text-align: center;
 }
 
-/* Header styling */
+/* Header Styling */
 h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Search Bar Styling */
+/* Search Bar Styling with Color */
 .search-container {
     margin-bottom: 30px;
     text-align: center;
@@ -45,7 +45,7 @@ h2 {
 
 #searchInput:focus {
     outline: none;
-    border-color: #007BFF;
+    border-color: #00C2FF;
     background-color: #f8f9fa;
 }
 
@@ -57,9 +57,9 @@ h2 {
     margin-top: 40px;
 }
 
-/* Individual Category Cards */
+/* Individual Category Cards with Gradient */
 .card {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #1E1E2F, #2A2A43);
     color: white;
     padding: 20px;
     text-decoration: none;
@@ -69,32 +69,32 @@ h2 {
 }
 
 .card:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #3A3A57, #1E1E2F);
     transform: scale(1.05);
 }
 
-/* Card Title */
+/* Card Title with Color */
 .card h3 {
     margin-top: 0;
     font-size: 1.7rem;
-    color: #fff;
+    color: #FFCC00;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Card Description */
+/* Card Description with Light Text */
 .card p {
     font-size: 1rem;
-    color: #ccc;
+    color: #ddd;
 }
 
-/* Footer Styling */
+/* Footer Styling with Soft Background */
 footer {
     margin-top: 50px;
     text-align: center;
     font-size: 1rem;
     color: #555;
     padding: 20px;
-    background-color: #f0f4f7;
+    background-color: #f4f7f6;
     border-top: 1px solid #ddd;
 }
 

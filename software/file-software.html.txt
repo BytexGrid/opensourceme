@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management Software</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>File Management Software</h1>
+        <p>Efficient tools to manage and organize your files.</p>
+    </header>
+    <main>
+        <ul class="software-list">
+            <li><a href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> - A powerful office suite for managing documents.</li>
+            <li><a href="https://peazip.github.io/" target="_blank">PeaZip</a> - Free archiver supporting multiple file formats.</li>
+            <li><a href="https://tortoisesvn.net/" target="_blank">TortoiseSVN</a> - Version control system for file tracking.</li>
+        </ul>
+        <a href="../index.html">⬅ Back to Home</a>
+    </main>
+</body>
+</html>

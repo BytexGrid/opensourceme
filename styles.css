@@ -8,12 +8,25 @@ body {
     color: white;
 }
 
+/* Dark overlay for readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    z-index: -1; /* Ensure it stays behind text */
+}
+
 /* Center the content */
 main.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 /* Header styling */
@@ -32,7 +45,7 @@ h2 {
 
 /* Individual category cards */
 .card {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Darker background for card */
     color: white;
     padding: 20px;
     text-decoration: none;
@@ -57,4 +70,17 @@ h2 {
 .card p {
     font-size: 1rem;
     color: #ccc;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    font-size: 1rem;
 }

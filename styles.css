@@ -1,11 +1,12 @@
 /* Body styling with background */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: url('https://source.unsplash.com/1920x1080/?technology') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
     color: white;
+    line-height: 1.6;
 }
 
 /* Dark overlay for readability */
@@ -24,7 +25,7 @@ body::before {
 main.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     position: relative;
 }
@@ -34,14 +35,14 @@ h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #f1c40f; /* Bright Yellow */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #f39c12; /* Bright gold color for the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Category grid styling */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 30px;
     justify-items: center;
 }
@@ -53,15 +54,17 @@ h2 {
     padding: 25px;
     text-decoration: none;
     border-radius: 12px;
-    transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    width: 250px;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    width: 270px;
     text-align: left;
 }
 
+/* Hover effect for cards */
 .card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Card title */
@@ -70,20 +73,20 @@ h2 {
     font-size: 1.6rem;
     font-weight: bold;
     color: #3498db; /* Blue color for titles */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Card description */
 .card p {
     font-size: 1.1rem;
-    color: #ccc;
+    color: #ddd;
     line-height: 1.5;
 }
 
 /* Footer styling */
 footer {
     margin-top: 50px;
-    padding: 30px;
+    padding: 40px;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     color: white;
@@ -91,7 +94,7 @@ footer {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     margin: 0;
 }
@@ -99,9 +102,18 @@ footer p {
 /* Adjustments for better responsiveness */
 @media (max-width: 768px) {
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

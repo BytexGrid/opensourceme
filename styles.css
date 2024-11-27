@@ -1,47 +1,82 @@
-/* Background with elegant blue */
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with background */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #3A5BA0, #7A9DFF);
+    background: linear-gradient(135deg, #9C27B0, #E91E63);
     margin: 0;
     padding: 0;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Center the content container */
+main.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto; /* Ensures the content is centered */
 }
 
 /* Header Styling */
 h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #F4C542; /* Gold color for heading */
+    color: #fff;
     font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Category Cards with Gradient */
+/* Category grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+}
+
+/* Individual category cards */
 .card {
-    background: linear-gradient(135deg, #243D6D, #2A568D);
+    background: linear-gradient(135deg, #8E24AA, #F50057);
     color: #fff;
     padding: 20px;
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, background 0.3s;
+    text-align: center;
 }
 
 .card:hover {
-    background: linear-gradient(135deg, #F4C542, #243D6D); /* Hover with Gold effect */
+    background: linear-gradient(135deg, #F50057, #8E24AA);
     transform: scale(1.05);
 }
 
-/* Card Title with Gold Accent */
+/* Card Title with Bold and Bright Color */
 .card h3 {
-    color: #F4C542; /* Gold color */
+    color: #fff;
     font-size: 1.7rem;
     margin-top: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* Card Description with Soft White */
+/* Card Description with Soft Pink */
 .card p {
     font-size: 1rem;
-    color: #D1D1D1;
+    color: #F8BBD0;
+}
+
+/* Additional Styles for Links (Navigation) */
+a {
+    text-decoration: none;
+    color: inherit;
 }

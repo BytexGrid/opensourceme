@@ -1,23 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>File Management Software</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="software.css">
 </head>
+
 <body>
     <header>
         <h1>File Management Software</h1>
-        <p>Efficient tools to manage and organize your files.</p>
+        <p>Explore the best open-source file management software available across all platforms!</p>
     </header>
-    <main>
-        <ul class="software-list">
-            <li><a href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> - A powerful office suite for managing documents.</li>
-            <li><a href="https://peazip.github.io/" target="_blank">PeaZip</a> - Free archiver supporting multiple file formats.</li>
-            <li><a href="https://tortoisesvn.net/" target="_blank">TortoiseSVN</a> - Version control system for file tracking.</li>
-        </ul>
-        <a href="../index.html">⬅ Back to Home</a>
+
+    <main class="container">
+        <!-- Search Bar & OS Filter -->
+        <div class="filter-container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search software..." onkeyup="searchFunction()" />
+            </div>
+
+            <div class="filter-group">
+                <label for="os-filter">Filter by OS:</label>
+                <select id="os-filter" onchange="filterSoftware()">
+                    <option value="all">All Platforms</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                    <option value="macos">macOS</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Software Listing -->
+        <div class="software-container">
+            <!-- Software Item 1 -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/FileZilla_logo.svg" alt="FileZilla">
+                <h3>FileZilla</h3>
+                <p>FileZilla is a free and open-source FTP solution that works on Windows, Linux, and macOS.</p>
+                <a href="https://filezilla-project.org" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 2 -->
+            <div class="software-item" data-os="windows,linux">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/WinSCP_Logo.png" alt="WinSCP">
+                <h3>WinSCP</h3>
+                <p>WinSCP is a free and open-source file transfer client for Windows. It supports FTP, SFTP, WebDAV, and SCP.</p>
+                <a href="https://winscp.net" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                </div>
+            </div>
+
+            <!-- Software Item 3 -->
+            <div class="software-item" data-os="linux,macos">
+                <img src="https://freesvg.org/img/1307193598.png" alt="Double Commander">
+                <h3>Double Commander</h3>
+                <p>Double Commander is an open-source, cross-platform file manager with two panels side by side.</p>
+                <a href="https://doublecmd.sourceforge.io" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 4 -->
+            <div class="software-item" data-os="windows">
+                <img src="https://www.freecommander.com/Images/wp/logo2.jpg" alt="FreeCommander">
+                <h3>FreeCommander</h3>
+                <p>FreeCommander is a free, dual-pane file manager for Windows. It comes with a wide variety of useful features for file management.</p>
+                <a href="https://freecommander.com" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                </div>
+            </div>
+
+            <!-- Software Item 5 -->
+            <div class="software-item" data-os="linux,windows">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Xfce_logo.svg/900px-Xfce_logo.svg.png" alt="Thunar">
+                <h3>Thunar</h3>
+                <p>Thunar is a lightweight file manager designed for the XFCE desktop environment, available for Linux and Windows.</p>
+                <a href="https://docs.xfce.org/xfce/thunar/start" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">Windows</span>
+                </div>
+            </div>
+
+            <!-- Software Item 6 -->
+            <div class="software-item" data-os="linux">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Nautilus_icon.svg/72px-Nautilus_icon.svg.png" alt="Nautilus">
+                <h3>Nautilus</h3>
+                <p>Nautilus is the default file manager for GNOME, the popular desktop environment for Linux. It is simple yet powerful.</p>
+                <a href="https://apps.gnome.org/Nautilus/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                </div>
+            </div>
+
+            <!-- Software Item 7 -->
+            <div class="software-item" data-os="linux">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Application_icon_for_nemo_file_manager1.jpg" alt="Nemo">
+                <h3>Nemo</h3>
+                <p>Nemo is the default file manager for the Cinnamon desktop environment, offering simple and intuitive navigation.</p>
+                <a href="https://github.com/linuxmint/nemo" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                </div>
+            </div>
+
+            <!-- Software Item 8 -->
+            <div class="software-item" data-os="windows,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/User-krusader.svg" alt="Krusader">
+                <h3>Krusader</h3>
+                <p>Krusader is an advanced twin-panel file manager for KDE, highly configurable and perfect for power users.</p>
+                <a href="https://krusader.org" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

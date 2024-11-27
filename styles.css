@@ -1,6 +1,6 @@
 /* Body styling with background */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://source.unsplash.com/1920x1080/?technology') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
@@ -31,8 +31,10 @@ main.container {
 
 /* Header styling */
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #f1c40f; /* Bright Yellow */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
@@ -40,47 +42,66 @@ h2 {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px;
+    justify-items: center;
 }
 
 /* Individual category cards */
 .card {
     background: rgba(0, 0, 0, 0.7); /* Darker background for card */
     color: white;
-    padding: 20px;
+    padding: 25px;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    text-align: left;
 }
 
 .card:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 /* Card title */
 .card h3 {
     margin-top: 0;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #3498db; /* Blue color for titles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Card description */
 .card p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ccc;
+    line-height: 1.5;
 }
 
 /* Footer styling */
 footer {
     margin-top: 50px;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     color: white;
+    border-radius: 10px;
 }
 
 footer p {
     font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Adjustments for better responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -10,6 +10,12 @@
 </head>
 
 <body>
+    <!-- Dark Mode Toggle (Slider) positioned at the right -->
+    <div class="dark-mode-container">
+        <label for="darkModeToggle" class="dark-mode-label">Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle" class="toggle-switch">
+    </div>
+
     <header>
         <h1>File Management Software</h1>
         <p>Explore the best open-source file management software available across all platforms!</p>
@@ -35,6 +41,11 @@
 
         <!-- Software Listing -->
         <div class="software-container">
+
+<!-- Message displayed when no results are found -->
+<div id="noResultsMessage" style="display:none;">No results found for your query.</div>
+
+
             <!-- Software Item 1 -->
             <div class="software-item" data-os="windows,linux,macos">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/FileZilla_logo.svg" alt="FileZilla">

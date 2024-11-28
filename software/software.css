@@ -8,10 +8,16 @@
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, rgba(0, 186, 255, 0.5), rgba(255, 0, 204, 0.5));
+    background: linear-gradient(135deg, rgba(0, 186, 255, 0.5), rgba(255, 0, 204, 0.5)); /* Gradient for light mode */
     color: #333;
     line-height: 1.6;
     padding: 20px;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.8), rgba(0, 0, 0, 0.8)); /* Darker gradient for dark mode */
+    color: #e0e0e0;
 }
 
 header {
@@ -73,6 +79,25 @@ p {
     opacity: 1;
 }
 
+/* Dark Mode for Software Cards */
+body.dark-mode .software-item {
+    background: #333333; /* Dark background for cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Darker shadow */
+    color: #e0e0e0;
+}
+
+/* "No Results Found" Message */
+#noResultsMessage {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #888; /* Light grey color for light mode */
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+body.dark-mode #noResultsMessage {
+    color: #ccc; /* Lighter color for dark mode */
+}
 .software-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -89,16 +114,31 @@ p {
     margin-bottom: 10px;
 }
 
+/* Dark Mode for Text */
+body.dark-mode .software-item h3 {
+    color: #e0e0e0;  /* Light text for headings in dark mode */
+}
+
 .software-item p {
     font-size: 1em;
     margin-bottom: 10px;
     color: #555;
 }
 
+/* Dark Mode for Paragraphs */
+body.dark-mode .software-item p {
+    color: #ccc; /* Lighter text color */
+}
+
 .software-item a {
     color: #008CBA;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Dark Mode for Links */
+body.dark-mode .software-item a {
+    color: #33aaff;  /* Lighter color for links */
 }
 
 .os-tags {
@@ -116,9 +156,19 @@ p {
     color: #333;
 }
 
+/* Dark Mode for OS Tags */
+body.dark-mode .os-tag {
+    background: #444; /* Darker background for tags in dark mode */
+    color: #fff;  /* Light text color for tags */
+}
+
 /* Hover Effects */
 .software-item a:hover {
     text-decoration: underline;
+}
+
+body.dark-mode .software-item a:hover {
+    color: #fff; /* Lighter link hover effect */
 }
 
 /* Responsiveness */
@@ -148,3 +198,50 @@ p {
     gap: 10px;
 }
 
+/* Dark Mode Toggle Container */
+.dark-mode-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-label {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.toggle-switch {
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch:checked {
+    background: #007BFF; /* Blue background for dark mode */
+}
+
+.toggle-switch:checked::before {
+    transform: translateX(25px);  /* Move the button to the right when checked */
+}

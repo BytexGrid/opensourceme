@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Media Tools</title>
+    <link rel="stylesheet" href="software.css">
+</head>
+
+<body>
+    <!-- Dark Mode Toggle (Slider) positioned at the right -->
+    <div class="dark-mode-container">
+        <label for="darkModeToggle" class="dark-mode-label">Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle" class="toggle-switch">
+    </div>
+
+    <header>
+        <h1>Open Source Media Tools</h1>
+        <p>Explore the best open-source media tools available across all platforms!</p>
+    </header>
+
+    <main class="container">
+        <!-- Search Bar & OS Filter -->
+        <div class="filter-container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search software..." onkeyup="searchFunction()" />
+            </div>
+
+            <div class="filter-group">
+                <label for="os-filter">Filter by OS:</label>
+                <select id="os-filter" onchange="filterSoftware()">
+                    <option value="all">All Platforms</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                    <option value="macos">macOS</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Software Listing -->
+        <div class="software-container">
+            <!-- Software Item 1: Audacity -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Audacity_Logo.svg" alt="Audacity">
+                <h3>Audacity</h3>
+                <p>Audacity is an open-source, cross-platform audio editor used for recording and editing sounds.</p>
+                <a href="https://www.audacityteam.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 2: Ardour -->
+            <div class="software-item" data-os="linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Ardour-icon.png" alt="Ardour">
+                <h3>Ardour</h3>
+                <p>Ardour is an open-source, cross-platform digital audio workstation for recording, editing, and mixing.</p>
+                <a href="https://ardour.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 3: LMMS -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LMMS_3D_Logo.png" alt="LMMS">
+                <h3>LMMS</h3>
+                <p>LMMS is a free, open-source digital audio workstation for creating, editing, and producing music.</p>
+                <a href="https://lmms.io/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 4: Shotcut -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://www.shotcut.org/assets/img/media/shotcut-logo-512x512.png" alt="Shotcut">
+                <h3>Shotcut</h3>
+                <p>Shotcut is an open-source, cross-platform video editor for editing and creating videos.</p>
+                <a href="https://shotcut.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 5: OpenShot -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/OpenShot_logo_%282016%29.svg" alt="OpenShot">
+                <h3>OpenShot</h3>
+                <p>OpenShot is an open-source video editor with an easy-to-use interface and powerful editing features.</p>
+                <a href="https://www.openshot.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 6: Blender -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender">
+                <h3>Blender</h3>
+                <p>Blender is an open-source 3D creation suite for modeling, animation, simulation, rendering, and more.</p>
+                <a href="https://www.blender.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 7: OBS Studio -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/OBS_Studio_Logo.svg" alt="OBS Studio">
+                <h3>OBS Studio</h3>
+                <p>OBS Studio is open-source software for video recording and live streaming.</p>
+                <a href="https://obsproject.com/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 8: HandBrake -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/HandBrake_Icon.png" alt="HandBrake">
+                <h3>HandBrake</h3>
+                <p>HandBrake is a free and open-source transcoder for digital video files, supporting a wide range of formats.</p>
+                <a href="https://handbrake.fr/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 9: Kdenlive -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Kdenlive-logo.svg/768px-Kdenlive-logo.svg.png?20191121211215" alt="Kdenlive">
+                <h3>Kdenlive</h3>
+                <p>Kdenlive is a free and open-source video editing software designed for the KDE desktop environment.</p>
+                <a href="https://kdenlive.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 10: DaVinci Resolve -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png" alt="DaVinci Resolve">
+                <h3>DaVinci Resolve</h3>
+                <p>DaVinci Resolve is a powerful video editing software with advanced color grading and editing features.</p>
+                <a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 11: Natron -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Natron_icon.svg/1024px-Natron_icon.svg.png" alt="Natron">
+                <h3>Natron</h3>
+                <p>Natron is a powerful open-source compositing software for visual effects and motion graphics.</p>
+                <a href="https://natrongithub.github.io/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 12: Pencil2D -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://ubuntuhandbook.org/wp-content/uploads/2019/06/pencil2d-icon.png" alt="Pencil2D">
+                <h3>Pencil2D</h3>
+                <p>Pencil2D is an open-source 2D animation software designed for creating hand-drawn animations.</p>
+                <a href="https://www.pencil2d.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 13: Inkscape -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Inkscape_Logo.svg" alt="Inkscape">
+                <h3>Inkscape</h3>
+                <p>Inkscape is a free and open-source vector graphics editor used for creating illustrations, diagrams, and designs.</p>
+                <a href="https://inkscape.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 14: Krita -->
+            <div class="software-item" data-os="windows,linux,macos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Calligrakrita-base.svg/1200px-Calligrakrita-base.svg.png" alt="Krita">
+                <h3>Krita</h3>
+                <p>Krita is an open-source painting program for digital artists, focusing on illustrations and concept art.</p>
+                <a href="https://krita.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Windows</span>
+                    <span class="os-tag">Linux</span>
+                    <span class="os-tag">macOS</span>
+                </div>
+            </div>
+
+            <!-- Software Item 15: Cinelerra -->
+            <div class="software-item" data-os="linux">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Cinelerra.svg/452px-Cinelerra.svg.png" alt="Cinelerra">
+                <h3>Cinelerra</h3>
+                <p>Cinelerra is an open-source, professional video editing software designed for Linux.</p>
+                <a href="https://www.cinelerra.org/" target="_blank">Visit Website</a>
+                <div class="os-tags">
+                    <span class="os-tag">Linux</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

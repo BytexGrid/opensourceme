@@ -531,3 +531,76 @@ body.dark-mode .slider:hover {
         transform: scale(1);
     }
 }
+
+/* Mobile Optimizations - Only apply on smaller screens */
+@media screen and (max-width: 768px) {
+    /* Adjust container padding */
+    .container {
+        padding: 15px 10px;
+    }
+
+    /* Adjust search bar for mobile */
+    #searchInput {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    /* Make cards full width on mobile */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card {
+        min-height: 200px;
+        padding: 20px 15px;
+    }
+
+    /* Adjust dark mode toggle position */
+    .theme-switch-wrapper {
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 20px;
+    }
+
+    /* No results message */
+    .no-results {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .no-results .emoji {
+        font-size: 2rem;
+    }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+    /* Further reduce padding */
+    .container {
+        padding: 10px 5px;
+    }
+
+    /* Adjust card spacing */
+    .grid {
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .card {
+        padding: 15px 12px;
+    }
+
+    /* Make search bar more compact */
+    .search-container {
+        padding: 0 15px;
+    }
+}

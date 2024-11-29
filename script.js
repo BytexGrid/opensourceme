@@ -1,17 +1,51 @@
 // Search Functionality
 function searchFunction() {
-    let input = document.getElementById("searchInput");
-    let filter = input.value.toUpperCase();
-    let softwareItems = document.querySelectorAll(".software-item");
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const grid = document.getElementById('categoriesGrid');
+    const cards = Array.from(grid.getElementsByClassName('card'));
+    const noResults = document.getElementById('noResults');
+    
+    let hasVisibleCards = false;
+    let titleMatches = [];
+    let descriptionMatches = [];
 
-    softwareItems.forEach(item => {
-        let title = item.querySelector("h3").textContent;
-        if (title.toUpperCase().indexOf(filter) > -1) {
-            item.style.display = "";
+    // Remove search animation class from all cards
+    cards.forEach(card => {
+        card.classList.remove('search-animation');
+    });
+
+    // Sort cards based on where the match is found
+    cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        
+        if (title.includes(filter)) {
+            titleMatches.push(card);
+            hasVisibleCards = true;
+        } else if (description.includes(filter)) {
+            descriptionMatches.push(card);
+            hasVisibleCards = true;
         } else {
-            item.style.display = "none";
+            card.style.display = "none";
         }
     });
+
+    // Show title matches first, then description matches
+    titleMatches.forEach(card => {
+        card.style.display = "";
+        card.classList.add('search-animation');
+        grid.appendChild(card);
+    });
+
+    descriptionMatches.forEach(card => {
+        card.style.display = "";
+        card.classList.add('search-animation');
+        grid.appendChild(card);
+    });
+
+    // Show/hide no results message
+    noResults.classList.toggle('hidden', hasVisibleCards);
 }
 
 // OS Filter Functionality
@@ -31,25 +65,23 @@ function filterSoftware() {
     });
 }
 
-// Dark Mode Toggle Functionality
-const darkModeToggle = document.getElementById("darkModeToggle");
+// Dark Mode Toggle
+const toggleSwitch = document.querySelector('#checkbox');
+const body = document.body;
 
-// Check and apply saved preference on page load
-if (localStorage.getItem("dark-mode") === "enabled") {
-    document.body.classList.add("dark-mode");
-    darkModeToggle.textContent = "Disable Night Mode";
+// Check for saved dark mode preference
+const darkMode = localStorage.getItem('darkMode');
+if (darkMode === 'enabled') {
+    body.classList.add('dark-mode');
+    toggleSwitch.checked = true;
 }
 
-// Toggle dark mode on button click
-darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Save preference in localStorage
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("dark-mode", "enabled");
-        darkModeToggle.textContent = "Disable Night Mode";
+toggleSwitch.addEventListener('change', function(e) {
+    if (e.target.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
     } else {
-        localStorage.setItem("dark-mode", "disabled");
-        darkModeToggle.textContent = "Enable Night Mode";
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
     }
 });

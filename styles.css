@@ -8,13 +8,14 @@
 /* Body Styling with Elegant Gradient */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #007BFF, #00B0FF); /* Professional Gradient */
+    background: linear-gradient(135deg, #FC466B, #3F5EFB, #27AE60); /* Pink to blue to emerald */
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    padding: 25px 20px;
 }
 
 /* Dark Mode Styles */
@@ -26,87 +27,187 @@ body.dark-mode {
 main.container {
     max-width: 1200px;
     width: 100%;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background to make content pop */
     border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 main.container.dark-mode {
     background-color: rgba(33, 33, 33, 0.9); /* Darker background for containers */
 }
 
-/* Header Styling */
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0;
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+/* Header Container */
+.container:first-of-type {
+    margin-bottom: 25px;
+    padding: 20px;
 }
 
-/* Dark Mode Header */
-body.dark-mode h2 {
-    color: #e0e0e0;
-    text-shadow: 3px 3px 8px rgba(33, 33, 33, 0.8);
+/* Main Content Container */
+.container:last-of-type {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Search Container */
+.search-container {
+    margin: 20px auto 25px;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    opacity: 1; /* Make sure container is visible */
+    animation: fadeIn 0.5s ease-out;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Search Bar Styling */
 #searchInput {
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 40px;
-    padding: 12px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 30px;
-    background-color: #fff;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s ease;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 1; /* Make sure search bar is visible */
+    animation: searchPulse 2s ease-in-out;
+    animation-delay: 1.2s; /* Start after cards appear */
+}
+
+@keyframes searchPulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
 }
 
 #searchInput:focus {
     outline: none;
-    background-color: #F1F1F1;
-    box-shadow: 0 0 12px rgba(30, 144, 255, 0.7);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Dark Mode Search Bar */
 #searchInput.dark-mode {
-    background-color: #333333; /* Dark background for search */
-    color: #ffffff; /* Light text */
-    border: 1px solid #555555;
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#searchInput.dark-mode:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#searchInput.dark-mode::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Category Grid Styling */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure uniform grid items */
-    gap: 30px;
+    gap: 25px;
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 /* Individual Category Cards */
 .card {
-    background: #007BFF; /* Professional blue card background */
+    background: rgba(252, 70, 107, 0.15);
     color: white;
-    padding: 25px;
+    padding: 30px 25px;
     text-decoration: none;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 250px; /* Ensure cards have consistent height */
+    min-height: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    animation: cardAppear 0.6s ease-out backwards;
 }
 
-.card:hover {
-    background: #00B0FF; /* Lighter blue when hovered */
-    transform: scale(1.05);
+.card.search-animation {
+    animation: cardAppearFast 0.3s ease-out backwards !important;
 }
+
+/* Card Animation on Load */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Faster animation for search results */
+@keyframes cardAppearFast {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial page load delays */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+.card:nth-child(9) { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1s; }
+
+/* Search result delays (faster) */
+.card.search-animation:nth-child(1) { animation-delay: 0.05s; }
+.card.search-animation:nth-child(2) { animation-delay: 0.1s; }
+.card.search-animation:nth-child(3) { animation-delay: 0.15s; }
+.card.search-animation:nth-child(4) { animation-delay: 0.2s; }
+.card.search-animation:nth-child(5) { animation-delay: 0.25s; }
+.card.search-animation:nth-child(6) { animation-delay: 0.3s; }
+.card.search-animation:nth-child(7) { animation-delay: 0.35s; }
+.card.search-animation:nth-child(8) { animation-delay: 0.4s; }
+.card.search-animation:nth-child(9) { animation-delay: 0.45s; }
+.card.search-animation:nth-child(10) { animation-delay: 0.5s; }
 
 /* Dark Mode for Cards */
 body.dark-mode .card {
@@ -129,7 +230,8 @@ body.dark-mode .card:hover {
 }
 
 /* Dark Mode for Card Titles */
-body.dark-mode .card h3 {
+body.dark-mode h2 {
+    color: #e0e0e0;
     text-shadow: 2px 2px 5px rgba(33, 33, 33, 0.8);
 }
 
@@ -187,51 +289,245 @@ body.dark-mode a:hover {
     }
 }
 
-/* Dark Mode Toggle (slider) */
-.dark-mode-container {
+/* Header Styling */
+h2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 30px 0;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+    border-radius: 2px;
+}
+
+/* Dark Mode Header */
+body.dark-mode h2 {
+    color: #f0f0f0;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode h2::after {
+    background: linear-gradient(90deg, rgba(240,240,240,0), rgba(240,240,240,0.6), rgba(240,240,240,0));
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2rem;
+        margin: 15px 0;
+    }
+}
+
+/* Theme Switch Styling */
+.theme-switch-wrapper {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 100;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    gap: 10px;
-    z-index: 1000;
+    justify-content: space-between;
+    padding: 0 5px;
 }
 
-.dark-mode-label {
-    font-size: 0.8rem;
-    color: #fff;
-    font-weight: bold;
-}
-
-.toggle-switch {
-    appearance: none;
-    width: 50px;
-    height: 25px;
-    background: #ccc;
-    border-radius: 25px;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
-}
-
-.toggle-switch::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 19px;
-    height: 19px;
+.slider:before {
     background: #fff;
+    bottom: 3px;
+    content: "";
+    height: 24px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 24px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.toggle-switch:checked {
-    background: #007BFF; /* Blue background for dark mode */
+.slider-icon {
+    font-size: 14px;
+    line-height: 1;
+    z-index: 1;
 }
 
-.toggle-switch:checked::before {
-    transform: translateX(25px);  /* Move the button to the right when checked */
+.slider-icon.sun {
+    margin-right: 2px;
+}
+
+.slider-icon.moon {
+    margin-left: 2px;
+}
+
+input:checked + .slider {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Dark Mode Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slider-icon {
+    transition: transform 0.5s ease;
+}
+
+input:checked + .slider .moon {
+    transform: scale(1.2);
+}
+
+input:not(:checked) + .slider .sun {
+    transform: scale(1.2);
+}
+
+/* Hover Effects */
+.slider:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slider:active:before {
+    transform: scale(0.9);
+}
+
+/* Dark Mode Specific Styles */
+body.dark-mode .slider {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .slider:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.no-results.hidden {
+    display: none;
+}
+
+.no-results .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+    animation: bounce 2s infinite;
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.no-results .suggestion {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    margin-top: 5px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(15, 32, 39, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .heart {
+    color: #ff4d4d;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+    margin: 0 5px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

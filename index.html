@@ -11,13 +11,18 @@
 <body>
 
     <!-- Dark Mode Toggle (Slider) -->
-    <div class="dark-mode-container">
-        <label for="darkModeToggle" class="dark-mode-label">Dark Mode</label>
-        <input type="checkbox" id="darkModeToggle" class="toggle-switch">
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider">
+                <span class="slider-icon sun">☀️</span>
+                <span class="slider-icon moon">🌙</span>
+            </div>
+        </label>
     </div>
 
     <main class="container">
-       <h2>Explore Open Source Software</h2>
+       <h2>Open Source Software Hub</h2>
 
        <div class="grid">
         <!-- Categories and Cards here -->
@@ -28,6 +33,11 @@
         <!-- Search Bar -->
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search categories..." onkeyup="searchFunction()" />
+            <div id="noResults" class="no-results hidden">
+                <span class="emoji">🔍</span>
+                <p>Oops! No matches found</p>
+                <span class="suggestion">Try something else? 💡</span>
+            </div>
         </div>
 
         <div class="grid" id="categoriesGrid">
@@ -102,10 +112,11 @@
             </a>
         </div>
 
-        <footer>
-            <p>Made with ❤️ by OpenSource Enthusiasts</p>
-        </footer>
     </main>
+
+    <div class="footer">
+        Made with <span class="heart">❤️</span> by OpenSource Enthusiasts
+    </div>
 
     <script src="script.js"></script>
 </body>

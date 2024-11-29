@@ -396,11 +396,11 @@ body.dark-mode h2::after {
 }
 
 .slider-icon.sun {
-    margin-right: 2px;
+    margin-left: 1px;
 }
 
 .slider-icon.moon {
-    margin-left: 2px;
+    margin-right: 3px;
 }
 
 input:checked + .slider {

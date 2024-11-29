@@ -62,24 +62,22 @@ function filterSoftware() {
 }
 
 // Dark Mode Toggle Functionality
-const darkModeToggle = document.getElementById("darkModeToggle");
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.getElementById('checkbox');
+    const currentTheme = localStorage.getItem('theme');
 
-// Check and apply saved preference on page load
-if (localStorage.getItem("dark-mode") === "enabled") {
-    document.body.classList.add("dark-mode"); // Enable dark mode by default if saved preference exists
-    darkModeToggle.checked = true; // Set the toggle to checked if dark mode was enabled previously
-} else {
-    document.body.classList.remove("dark-mode"); // Ensure the light mode is applied by default
-    darkModeToggle.checked = false; // Make sure the toggle is off by default
-}
-
-// Toggle dark mode on button click
-darkModeToggle.addEventListener("change", () => {
-    if (darkModeToggle.checked) {
-        document.body.classList.add("dark-mode"); // Enable dark mode
-        localStorage.setItem("dark-mode", "enabled"); // Save preference to localStorage
-    } else {
-        document.body.classList.remove("dark-mode"); // Disable dark mode
-        localStorage.setItem("dark-mode", "disabled"); // Save preference to localStorage
+    if (currentTheme) {
+        document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+        toggleSwitch.checked = currentTheme === 'dark';
     }
+
+    toggleSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });

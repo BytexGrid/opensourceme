@@ -11,9 +11,14 @@
 
 <body>
     <!-- Dark Mode Toggle (Slider) positioned at the right -->
-    <div class="dark-mode-container">
-        <label for="darkModeToggle" class="dark-mode-label">Dark Mode</label>
-        <input type="checkbox" id="darkModeToggle" class="toggle-switch">
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider">
+                <span class="slider-icon sun">☀️</span>
+                <span class="slider-icon moon">🌙</span>
+            </div>
+        </label>
     </div>
 
     <header>
@@ -42,9 +47,8 @@
         <!-- Software Listing -->
         <div class="software-container">
 
-<!-- Message displayed when no results are found -->
-<div id="noResultsMessage" style="display:none;">No results found for your query.</div>
-
+            <!-- Message displayed when no results are found -->
+            <div id="noResultsMessage" style="display:none;">No results found for your query.</div>
 
             <!-- Software Item 1 -->
             <div class="software-item" data-os="windows,linux,macos">
